@@ -3,7 +3,13 @@
 dashboardPage(
   dashboardHeader(title = "Stockradar"),
   dashboardSidebar(
-    sidebarSearchForm("searchText","searchButton"),
+    sidebarSearchForm("searchText",
+                      label = "select group or search..."
+                      ,"searchButton"),
+    selectInput("stock_grp","Select Group",
+                c("use search","tech",
+                  "cars"),
+                selected = "use search"),
     selectInput("src","Select Source",
                 c("yahoo","google",
                   "FRED","oanda"),
